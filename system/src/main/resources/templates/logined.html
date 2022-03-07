@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ログイン成功</title>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+<div class="uk-container">
+<table class="uk-table">
+    <caption>全ユーザーリスト</caption>
+    <thead>
+        <tr>
+            <th>ユーザー名</th>
+            <th>パスワード</th>
+            <th>住所</th>
+            <th>メール</th>
+        </tr>
+    </thead>
+
+    <tbody>
+   <tr th:each="userinfo : ${userList}">
+  <td th:text="${userinfo.username}" class="tdtest"></td>
+   <td th:text="${userinfo.pwd}" class="tdtest"></td>
+    <td th:text="${userinfo.address}" class="tdtest"></td>
+     <td th:text="${userinfo.email}" class="tdtest"></td>
+</tr>
+    </tbody>
+</table>
+</div>
+
+
+</body>
+</html>

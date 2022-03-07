@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.kksoft.web.mapper.RigsterMapper">
+  
+
+<insert id="creatUser">
+INSERT INTO boku(username, pwd, address, email) VALUES (#{username}, #{pwd}, #{address}, #{email})
+
+</insert>
+
+<select id="checkLogin" resultType="int">
+SELECT COUNT(username) from boku WHERE username=#{username} AND pwd=#{pwd}
+</select>
+
+<select id="getAllUserList" resultType="jp.co.kksoft.web.entity.BokuEntity">
+SELECT * FROM boku
+</select>
+
+</mapper>

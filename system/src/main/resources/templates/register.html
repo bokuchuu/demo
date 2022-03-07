@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>新規登録</title>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+<div class="uk-container">
+
+<form th:action="@{/web/doRegister}" th:object="${registerModel}" method="post">
+
+  <div class="uk-margin">
+            <input class="uk-input" type="text" th:field="*{username}" placeholder="ユーザー名">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" th:field="*{pwd}" placeholder="パスワード">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" th:field="*{address}" placeholder="アドレス">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" th:field="*{email}" placeholder="メール">
+        </div>
+        
+            <button class="uk-button uk-button-primary">新規登録</button>
+</form>
+</div>
+
+
+</body>
+</html>
